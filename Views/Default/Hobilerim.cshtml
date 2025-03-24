@@ -1,0 +1,19 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHobilerim>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Hobilerim</h2>
+    <div class="row">
+        @foreach (var x in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@x.Aciklama1</h5>
+                        <p class="card-text">@x.Aciklama2</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
