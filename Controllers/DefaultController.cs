@@ -58,6 +58,26 @@ namespace MvcCv.Controllers
             return PartialView(sertifikalar);
 
         }
+        [HttpGet]
+        public PartialViewResult iletisim()
+
+        {
+            return PartialView();
+
+        }
+
+        [HttpPost]
+        public PartialViewResult iletisim(TblIetisim t)
+
+        {
+            t.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.TblIetisim.Add(t);
+            db.SaveChanges();
+            return PartialView();
+
+        }
+
+
 
 
     }
