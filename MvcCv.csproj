@@ -226,6 +226,7 @@
     <Content Include="AdminLTE-3.2.0\dist\css\alt\adminlte.plugins.css" />
     <Content Include="AdminLTE-3.2.0\dist\css\alt\adminlte.plugins.min.css" />
     <Content Include="AdminLTE-3.2.0\dist\img\AdminLTELogo.png" />
+    <Content Include="AdminLTE-3.2.0\dist\img\adminprofile.jpg" />
     <Content Include="AdminLTE-3.2.0\dist\img\avatar.png" />
     <Content Include="AdminLTE-3.2.0\dist\img\avatar2.png" />
     <Content Include="AdminLTE-3.2.0\dist\img\avatar3.png" />
