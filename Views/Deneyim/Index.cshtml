@@ -46,7 +46,7 @@
                 @item.Tarih
             </td>
             <td>
-               <a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a>
+               <a href="/Deneyim/DeneyimSil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger">Sil</a>
             </td>
             <td>
                 <a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-warning">Düzenle</a>
@@ -56,3 +56,7 @@
 </table>
 <a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
 
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm("Silmek istediğinize emin misiniz?");
+    }</script>

@@ -23,6 +23,12 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
+                                <a href="/Yetenek/YeniYetenek" class="btn btn-info btn-lg">
+                                    <i class="fas fa-plus-circle"></i>
+                                     Yetenek Ekle
+                                </a>
+                                <br />
+                                <br />
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -30,14 +36,16 @@
                                             <th>Yetenek</th>
                                             <th>Derece</th>
                                             <th style="width: 40px">Oran</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
-                                            if(item.Oran>=50 && item.Oran <= 0)
+                                            if (item.Oran >= 0 && item.Oran <= 50)
                                             {
-                                                renk = "progress-bar progress-bar-danger";
+                                                renk = "progress-bar bg-danger";
                                             }
                                             if (item.Oran >= 51 && item.Oran <= 70)
                                             {
@@ -60,6 +68,19 @@
                                                     </div>
                                                 </td>
                                                 <td><span class="@renk">@item.Oran%</span></td>
+                                                <td>
+                                                    <a href="/Yetenek/YetenekDuzenle/@item.ID" class="btn btn-info btn-sm">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                        Düzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Yetenek/YetenekSil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                        Sil
+                                                    </a>
+                                                </td>
+
                                             </tr>
                                         }
 
@@ -75,5 +96,9 @@
     </div>
 </body>
 </html>
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm("Silmek istediğinize emin misiniz?");
+    }</script>
 
 

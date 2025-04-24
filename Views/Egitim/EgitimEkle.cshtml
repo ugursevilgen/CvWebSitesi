@@ -1,0 +1,94 @@
+﻿@model MvcCv.Models.Entity.TblEgitimlerim
+
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Eğitim Ekle</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-form {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .form-header {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn-save {
+            background: #0d6efd;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="admin-form">
+                    <div class="form-header">
+                        <h2><i class="fas fa-briefcase me-2"></i>Eğitim Ekle</h2>
+                        <p class="text-muted">Yeni eğitim bilgilerini aşağıdaki forma ekleyin</p>
+                    </div>
+
+                    <form method="POST">
+                        <!-- Eğitim -->
+                        <div class="mb-4">
+                            <label for="Baslik" class="form-label fw-bold">Başlık<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="Baslik" placeholder="Örn: İstanbul Üniversitesi" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="AltBaslik1" class="form-label fw-bold">Alt Başlık 1</label>
+                            <input type="text" class="form-control" name="AltBaslik1" placeholder="Örn: Mühendislik Faültesi">
+                        </div>
+                        <div class="mb-4">
+                            <label for="AltBaslik2" class="form-label fw-bold">Alt Başlık 2</label>
+                            <input type="text" class="form-control" name="AltBaslik2" placeholder="Örn: Yazılım Mühendisliği">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="GNO" class="form-label fw-bold">Genel Not Ortalaması</label>
+                            <input type="text" class="form-control" name="GNO" placeholder="Örn: 3,2/4">
+                            @Html.ValidationMessageFor(x=> x.GNO, "" , new {@style = "color:red"})
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="tarih" class="form-label fw-bold">Tarih </label>
+                            <input type="text" class="form-control" name="Tarih" placeholder="GG/AA/YYYY formatında">
+                            <small class="text-muted">Örnek: 01/01/2001</small>
+                        </div>
+
+                        <!-- Kaydet Butonu -->
+                        <div class="text-end mt-4">
+                            <button type="submit" class="btn btn-save btn-primary">
+                                <i class="fas fa-save me-2"></i>Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>   
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
