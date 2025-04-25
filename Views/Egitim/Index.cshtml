@@ -44,13 +44,13 @@
                 @item.Tarih
             </td>
             <td>
-                <a href="/Egitim/EgitimDuzenle/@item.ID" class="btn btn-info btn-sm">
+                <a href="/Egitim/EgitimDuzenle/@item.ID" class="btn bg-gradient-gray btn-sm">
                     <i class="fas fa-pencil-alt"></i>
                     Düzenle
                 </a>
             </td>
             <td>
-                <a href="/Egitim/EgitimSil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger">
+                <a href="/Egitim/EgitimSil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
                     Sil
                 </a>
@@ -58,7 +58,9 @@
         </tr>
     }
 </table>
-<a href="/Egitim/EgitimEkle/" class="btn btn-primary">Yeni Eğitim Bilgisi Ekle</a>
+<a href="/Egitim/EgitimEkle/" class="btn btn-info btn-lg">
+    <i class="fas fa-plus-circle"></i>
+    Yeni Eğitim Bilgisi Ekle</a>
 
 <script type="text/javascript">function confirmDelete() {
         return confirm("Silmek istediğinize emin misiniz?");
