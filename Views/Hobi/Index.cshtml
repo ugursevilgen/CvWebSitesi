@@ -1,5 +1,5 @@
 ﻿@using MvcCv.Models.Entity
-@model List<TblHakkinda>
+@model List<TblHobilerim>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -51,8 +51,8 @@
             <div class="col-md-12">
                 <div class="admin-form">
                     <div class="form-header">
-                        <h2><i class="fas fa-info-circle me-2"></i>Hakkındaki Bilgileri Düzenle</h2>
-                        <p class="text-muted">Hakkınızdaki bilgileri aşağıdaki formlardan güncelleyebilirsiniz.</p>
+                        <h2><i class="fas fa-hiking me-2"></i>Hobi Bilgilerini Düzenle</h2>
+                        <p class="text-muted">Hobi açıklamalarını aşağıdaki formlardan güncelleyebilirsiniz.</p>
                     </div>
 
                     @foreach (var item in Model)
@@ -62,38 +62,13 @@
                                 <input type="hidden" name="ID" value="@item.ID" />
 
                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Adı</label>
-                                    <textarea class="form-control" name="Ad" rows="1" required>@item.Ad</textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Soyadı</label>
-                                    <textarea class="form-control" name="Soyad" rows="1" required>@item.Soyad</textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Telefon</label>
-                                    <textarea class="form-control" name="Telefon" rows="1" required>@item.Telefon</textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Mail</label>
-                                    <textarea class="form-control" name="Mail" rows="1" required>@item.Mail</textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Adres</label>
-                                    <textarea class="form-control" name="Adres" rows="3" required>@item.Adres</textarea>
+                                    <label class="form-label fw-bold">Hobi Adı</label>
+                                    <textarea class="form-control" name="Aciklama1" rows="3" required>@item.Aciklama1</textarea>
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Açıklama</label>
-                                    <textarea class="form-control" name="Aciklama" rows="5" required>@item.Aciklama</textarea>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="form-label fw-bold">Resim</label>
-                                    <textarea class="form-control" name="Resim" rows="3" required>@item.Resim</textarea>
+                                    <textarea class="form-control" name="Aciklama2" rows="3" required>@item.Aciklama2</textarea>
                                 </div>
 
                                 <div class="text-end">

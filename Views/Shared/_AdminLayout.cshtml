@@ -5,6 +5,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+
+<div id="notification" class="notification alert alert-success" style="display: none; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <i class="fas fa-check-circle me-2"></i>
+    <span id="notification-message">Güncelleme başarıyla kaydedildi!</span>
+</div>
+
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,12 +54,22 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/Hakkimda/Index" class="nav-link">
                                 <i class="nav-icon fas fa-search-plus"></i>
                                 <p>
                                     Hakkımda
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="/SosyalMedya/Index" class="nav-link">
+                                <i class="nav-icon fas fa-user-friends"></i>
+                                <p>
+                                    Sosyal Medya
 
                                 </p>
                             </a>
@@ -76,7 +95,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/Hobi/Index" class="nav-link">
                                 <i class="nav-icon fas fa-heart"></i>
                                 <p>
                                     Hobilerim
@@ -106,6 +125,14 @@
                                 <i class="nav-icon fas fa-address-book"></i>
                                 <p>
                                     İletişim
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Login/Logout" class="nav-link">
+                                <i class="nav-icon far fa-window-close"></i>
+                                <p>
+                                    Çıkış
                                 </p>
                             </a>
                         </li>
