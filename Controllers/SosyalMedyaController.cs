@@ -30,6 +30,7 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult Ekle(TblSosyalMedya p)
         {
+            p.Durum = true;
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
@@ -62,24 +63,16 @@ namespace MvcCv.Controllers
         }
 
         [HttpPost]
-        public JsonResult DurumDegistir(int id, bool durum)
+        public ActionResult DurumDegistir(int id)
         {
-            try
+            var sosyalMedya = repo.Find(x => x.ID == id);
+            if (sosyalMedya != null)
             {
-                var sosyalMedya = repo.Find(x => x.ID == id);
-                if (sosyalMedya != null)
-                {
-                    sosyalMedya.Durum = durum;
-                    repo.TUpdate(sosyalMedya);
-                    return Json(new { success = true });
-                }
-                return Json(new { success = false, message = "Kayıt bulunamadı" });
+                // Durumu tersine çevir (toggle)
+                sosyalMedya.Durum = !sosyalMedya.Durum;
+                repo.TUpdate(sosyalMedya);
             }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, message = ex.Message });
-            }
+            return RedirectToAction("Index");
         }
     }
 }
-    

@@ -7,10 +7,11 @@ using MvcCv.Models.Entity;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
+
     public class DefaultController : Controller
     {
-        // GET: Default
-
+       
         DbCvEntities db = new DbCvEntities();
 
         public ActionResult Index()

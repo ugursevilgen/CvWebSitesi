@@ -48,53 +48,69 @@
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ekleModal">
                                     <i class="fas fa-plus-circle"></i>
                                     Yeni Sosyal Medya Hesabı Ekle
-                                    </button>
-                                    <br />
-                                    <br />
-                                    <table class="table table-bordered">
-                                        <thead>
+                                </button>
+                                <br /><br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Sosyal Medya</th>
+                                            <th>Durum</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
                                             <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>Sosyal Medya </th>
-                                                <th>Durum</th>
-                                                <th>Düzenle</th>
-                                                <th>Sil</th>
+                                                <td>@item.ID</td>
+                                                <td>@item.Ad</td>
+                                                <td>
+                                                    <form method="post" action="/SosyalMedya/DurumDegistir/@item.ID" style="display:inline">
+                                                        @if (item.Durum == true)
+                                                        {
+                                                            <button type="submit" class="btn btn-outline-warning">
+                                                                <i class="fas fa-toggle-on"></i> Pasif Et
+                                                            </button>
+                                                        }
+                                                        else
+                                                        {
+                                                            <button type="submit" class="btn btn-outline-success">
+                                                                <i class="fas fa-toggle-off"></i> Aktif Et
+                                                            </button>
+                                                        }
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <a href="/SosyalMedya/Duzenle/@item.ID" class="btn bg-gradient-gray">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                        Düzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/SosyalMedya/Sil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                        Sil
+                                                    </a>
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var item in Model)
-                                            {
-
-
-                                                <tr>
-                                                    <td>@item.ID</td>
-                                                    <td>@item.Ad</td>
-                                                    <td>@item.Durum</td>
-
-                                                    <td>
-                                                        <a href="/SosyalMedya/Duzenle/@item.ID" class="btn bg-gradient-gray">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                            Düzenle
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="/SosyalMedya/Sil/@item.ID" onclick="return confirmDelete();" class="btn btn-danger">
-                                                            <i class="fas fa-trash"></i>
-                                                            Sil
-                                                        </a>
-                                                    </td>
-
-                                                </tr>
-                                            }
-
-
-                                        </tbody>
-                                    </table>
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
+
+                            <script>
+                                function confirmDelete() {
+                                    return confirm("Silmek istediğinize emin misiniz?");
+                                }
+                            </script>
                         </div>
                     </div>
 
                 </div>
+
+            </div>
         </section>
     </div>
     <!-- Ekleme Modal -->
